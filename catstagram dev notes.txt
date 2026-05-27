@@ -4,10 +4,14 @@ npm create vite@latest catbeauty -- --template react-ts
 Start the project:
 npm run dev
     npm run start
-
+---
+ frontend: http://localhost:5173/
+ backend: http://localhost:3001/
+++++++++++++++++++++++++++++++++
 
 Install
 ----
+Frontend:
 npm install -D tailwindcss @tailwindcss/vite
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
@@ -16,8 +20,14 @@ npm install react-router-dom
 npm install @tanstack/react-query
 npm install react-infinite-scroll-component
 
+linter:
 npm install eslint-plugin-react-x
 npm install eslint-plugin-react-dom
+
+backend:
+npm install express cors dotenv
+npm install -D tsx concurrently @types/express @types/cors
+
 
 https://tailwindcss.com/docs/installation/using-vite
 
@@ -32,3 +42,11 @@ https://tanstack.com/query/latest
 https://thecatapi.com/
 https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
 https://www.npmjs.com/package/react-infinite-scroll-component
+
+////
+---
+1st phase.
+1.5 hours to create layout, including analizing the Challenge and reviewing Material UI, Tailwind and other documentation references.
+1.5 to refactor into components. 
+    Mostly, because I had forgotten how to use VS for editing and how to create non class components and because I had forgotten how to pass props, closre and variable scoping.
+2 hours to relearn GitHub, create repo, upload each version to show progress history.
