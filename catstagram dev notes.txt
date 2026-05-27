@@ -1,0 +1,34 @@
+Project creation:
+npm create vite@latest catbeauty -- --template react-ts
+
+Start the project:
+npm run dev
+    npm run start
+
+
+Install
+----
+npm install -D tailwindcss @tailwindcss/vite
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+
+npm install react-router-dom
+npm install @tanstack/react-query
+npm install react-infinite-scroll-component
+
+npm install eslint-plugin-react-x
+npm install eslint-plugin-react-dom
+
+https://tailwindcss.com/docs/installation/using-vite
+
+https://mui.com/material-ui/
+https://mui.com/material-ui/getting-started/
+https://mui.com/material-ui/all-components/
+
+https://mui.com/material-ui/material-icons/
+
+https://reactrouter.com/
+https://tanstack.com/query/latest
+https://thecatapi.com/
+https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
+https://www.npmjs.com/package/react-infinite-scroll-component
