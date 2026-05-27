@@ -1,23 +1,34 @@
-import { Typography, Card, CardMedia } from "@mui/material";
+import { Typography, Card, CardMedia, Skeleton } from "@mui/material";
+import type { Cat } from '../types/cat'
 
-export function CatFeatured() {
-    return (
-        <>
-            {/* Featured Content */}
-            <section className="mb-8">
-                <Typography variant="h5" className="mb-4 font-semibold">
-                    Featured Cat
-                </Typography>
+type CatFeaturedProps = {
+  cat: Cat | null
+  loading: boolean
+  handleOpen: (cat: Cat) => void
+}
 
-                <Card className="overflow-hidden rounded-2xl shadow">
-                    <CardMedia
-                        component="img"
-                        image="https://placehold.co/1200x500?text=Featured+Cat"
-                        alt="Featured cat"
-                        className="h-[260px] w-full cursor-pointer object-cover md:h-[420px]"
-                    />
-                </Card>
-            </section>
-        </>
-    )
+export function CatFeatured({ cat, loading, handleOpen }: CatFeaturedProps) {
+  return (
+    <section className="mb-8">
+      <Typography variant="h5" className="mb-4 font-semibold">
+        Featured Cat
+      </Typography>
+
+      {loading && !cat ? (
+        <Skeleton variant="rectangular" height={420} className="rounded-2xl" />
+      ) : cat ? (
+        <Card
+          onClick={() => handleOpen(cat)}
+          className="overflow-hidden rounded-2xl shadow"
+        >
+          <CardMedia
+            component="img"
+            image={cat.url}
+            alt={cat.breeds?.[0]?.name ?? cat.id}
+            className="h-[260px] w-full cursor-pointer object-cover md:h-[420px]"
+          />
+        </Card>
+      ) : null}
+    </section>
+  )
 }

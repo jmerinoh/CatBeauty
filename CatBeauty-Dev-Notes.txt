@@ -8,7 +8,12 @@ npm run dev
  frontend: http://localhost:5173/
  backend: http://localhost:3001/
 ++++++++++++++++++++++++++++++++
-
+React Vite frontend
++
+Small Express backend
++
+REST history API
+----
 Install
 ----
 Frontend:
@@ -50,3 +55,4 @@ https://www.npmjs.com/package/react-infinite-scroll-component
 1.5 to refactor into components. 
     Mostly, because I had forgotten how to use VS for editing and how to create non class components and because I had forgotten how to pass props, closre and variable scoping.
 2 hours to relearn GitHub, create repo, upload each version to show progress history.
+1 hour to create backend server with express.js and connect with CatAPI
