@@ -1,4 +1,4 @@
-import type { Cat, Breed } from '../types/cat'
+import type { Breed, Cat } from '../types/cat'
 
 type ApiErrorResponse = {
   message?: string
@@ -10,12 +10,15 @@ async function parseJsonResponse<T>(response: Response): Promise<T> {
   try {
     data = await response.json()
   } catch {
-    throw new Error('Invalid JSON response from server')
+    throw new Error('Invalid JSON response from server.')
   }
 
   if (!response.ok) {
     const message =
-      'message' in data && data.message
+      data &&
+      typeof data === 'object' &&
+      'message' in data &&
+      typeof data.message === 'string'
         ? data.message
         : `Request failed with status ${response.status}`
 
@@ -39,16 +42,13 @@ export async function getBreeds(): Promise<Breed[]> {
   const data = await parseJsonResponse<Breed[]>(response)
 
   if (!Array.isArray(data)) {
-    throw new Error('Invalid breeds response format')
+    throw new Error('Invalid breeds response format.')
   }
 
   return data
 }
 
-export async function getCats(
-  breedId?: string,
-  page = 0
-): Promise<Cat[]> {
+export async function getCats(breedId?: string, page = 0): Promise<Cat[]> {
   const params = new URLSearchParams({
     page: String(page),
     limit: '9',
@@ -62,7 +62,7 @@ export async function getCats(
   const data = await parseJsonResponse<Cat[]>(response)
 
   if (!Array.isArray(data)) {
-    throw new Error('Invalid cats response format')
+    throw new Error('Invalid cats response format.')
   }
 
   return data
@@ -73,7 +73,7 @@ export async function getFeaturedCat(): Promise<Cat> {
   const data = await parseJsonResponse<Cat>(response)
 
   if (!data || typeof data !== 'object' || !('url' in data)) {
-    throw new Error('Invalid featured cat response format')
+    throw new Error('Invalid featured cat response format.')
   }
 
   return data

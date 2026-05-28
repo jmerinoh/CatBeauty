@@ -1,48 +1,72 @@
+import PetsIcon from '@mui/icons-material/Pets'
 import {
-    AppBar, Toolbar, Typography, Select,
-    MenuItem,
+  AppBar,
+  Toolbar,
+  Typography,
+  Select,
+  MenuItem,
+  Button,
+  Box,
 } from '@mui/material'
-
 import type { SelectChangeEvent } from '@mui/material'
+import { Link as RouterLink } from 'react-router-dom'
 import type { Breed } from '../types/cat'
 
 type CatTopBarProps = {
-  breeds: Breed[]
-  selectedBreedId: string
-  onBreedChange: (breedId: string) => void
+  breeds?: Breed[]
+  selectedBreedId?: string
+  onBreedChange?: (breedId: string) => void
+  showBreedSelector?: boolean
 }
 
 export function CatTopBar({
-  breeds,
-  selectedBreedId,
+  breeds = [],
+  selectedBreedId = '',
   onBreedChange,
+  showBreedSelector = true,
 }: CatTopBarProps) {
   const handleChange = (event: SelectChangeEvent) => {
-    onBreedChange(event.target.value)
+    onBreedChange?.(event.target.value)
   }
 
   return (
     <AppBar position="sticky" color="default" elevation={1}>
-      <Toolbar className="flex justify-between gap-4">
-        <Typography variant="h6" className="font-bold">
-          🐱 Catstagram
-        </Typography>
-
-        <Select
-          size="small"
-          displayEmpty
-          value={selectedBreedId}
-          onChange={handleChange}
-          className="min-w-[180px] bg-white"
+      <Toolbar className="gap-4">
+        <Button
+          component={RouterLink}
+          to="/"
+          color="inherit"
+          startIcon={<PetsIcon />}
+          sx={{ textTransform: 'none' }}
         >
-          <MenuItem value="">Select breed</MenuItem>
+          <Typography variant="h6" component="span">
+            CatBeauty
+          </Typography>
+        </Button>
 
-          {breeds.map((breed) => (
-            <MenuItem key={breed.id} value={breed.id}>
-              {breed.name}
-            </MenuItem>
-          ))}
-        </Select>
+        <Box sx={{ flexGrow: 1 }} />
+
+        {showBreedSelector && (
+          <Select
+            size="small"
+            value={selectedBreedId}
+            onChange={handleChange}
+            displayEmpty
+            sx={{ minWidth: 180, backgroundColor: 'white' }}
+          >
+            <MenuItem value="">Select breed</MenuItem>
+
+            {breeds.map((breed) => (
+              <MenuItem key={breed.id} value={breed.id}>
+                {breed.name}
+              </MenuItem>
+            ))}
+          </Select>
+        )}
+
+        <Button component={RouterLink} to="/history" color="inherit">
+          History
+        </Button>
       </Toolbar>
     </AppBar>
   )

@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-#wjmh
+#jmh
 .env
+
+# history click
+server/data/

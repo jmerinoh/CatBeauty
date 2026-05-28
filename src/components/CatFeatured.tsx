@@ -1,4 +1,4 @@
-import { Typography, Card, CardMedia, Skeleton } from "@mui/material";
+import { Typography, Card, CardMedia, Skeleton } from '@mui/material'
 import type { Cat } from '../types/cat'
 
 type CatFeaturedProps = {
@@ -9,23 +9,26 @@ type CatFeaturedProps = {
 
 export function CatFeatured({ cat, loading, handleOpen }: CatFeaturedProps) {
   return (
-    <section className="mb-8">
-      <Typography variant="h5" className="mb-4 font-semibold">
+    <section className="my-8">
+      <Typography variant="h5" component="h2" className="mb-4">
         Featured Cat
       </Typography>
 
       {loading && !cat ? (
-        <Skeleton variant="rectangular" height={420} className="rounded-2xl" />
+        <Skeleton variant="rounded" height={320} />
       ) : cat ? (
         <Card
           onClick={() => handleOpen(cat)}
-          className="overflow-hidden rounded-2xl shadow"
+          className="cursor-pointer overflow-hidden rounded-2xl shadow transition hover:scale-[1.01]"
         >
           <CardMedia
             component="img"
             image={cat.url}
-            alt={cat.breeds?.[0]?.name ?? cat.id}
-            className="h-[260px] w-full cursor-pointer object-cover md:h-[420px]"
+            alt={cat.breeds?.[0]?.name ?? 'Featured cat'}
+            sx={{
+              height: { xs: 260, md: 420 },
+              objectFit: 'cover',
+            }}
           />
         </Card>
       ) : null}
