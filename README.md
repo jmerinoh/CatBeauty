@@ -1,73 +1,143 @@
-# React + TypeScript + Vite
+# CatBeauty
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CatBeauty is a small full-stack React application built for the frontend/full-stack challenge.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Frontend:
+- React
+- Vite
+- TypeScript
+- Material UI
+- Tailwind CSS
+- React Query
 
-## React Compiler
+Backend:
+- Express.js
+- TypeScript
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the ESLint configuration
+/frontend → React Vite application  
+/backend → Express API server
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Requirements
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This project assumes that Node.js and npm are installed.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Quick Installation
+
+#### macOS
+
+Using Homebrew:
+
+```bash
+brew install node
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### Windows
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Download and install Node.js from:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+https://nodejs.org/
+
+#### Verify Installation
+
+```bash
+node -v
+npm -v
 ```
+
+React and Vite dependencies are installed automatically through `npm install`.
+
+Additional references:
+- React: https://react.dev/learn/installation
+- Node.js: https://nodejs.org/
+
+---
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/jmerinoh/CatBeauty.git
+cd CatBeauty
+```
+
+---
+
+## Frontend Setup
+
+Go to the frontend folder:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the frontend server:
+
+```bash
+npm run dev
+```
+
+Frontend runs on:
+
+```txt
+http://localhost:5173
+```
+
+---
+
+## Backend Setup
+
+Open another terminal and go to the backend folder:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the backend server:
+
+```bash
+npm run dev
+```
+
+Backend runs on:
+
+```txt
+http://localhost:3001
+```
+
+---
+
+## Features
+
+- Infinite cat gallery
+- Featured cat section
+- Cat details modal
+- Backend API proxy using Express
+- Responsive layout
+
+## APIs
+
+- The Cat API  
+https://thecatapi.com/
+
+## Notes
+
+This project was developed as part of a frontend/full-stack technical challenge using React, TypeScript, Material UI, Tailwind CSS, and Express.js.

@@ -1,3 +1,6 @@
+Github project:
+https://github.com/jmerinoh/CatBeauty
+
 Project creation:
 npm create vite@latest catbeauty -- --template react-ts
 
