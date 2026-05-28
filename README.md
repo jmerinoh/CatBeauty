@@ -420,7 +420,8 @@ Used for:
 See:
 
 ```text
-docs/architecture.png
+
+![docs/architecture-phase2.png](https://github.com/jmerinoh/CatBeauty/blob/main/docs/architecture-phase2.png) 
 ```
 
 ---
