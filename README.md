@@ -5,119 +5,106 @@ CatBeauty is a small full-stack React application built for the frontend/full-st
 ## Tech Stack
 
 Frontend:
-- React
-- Vite
-- TypeScript
-- Material UI
-- Tailwind CSS
-- React Query
+
+* React
+* Vite
+* TypeScript
+* Material UI
+* Tailwind CSS
+* React Query
 
 Backend:
-- Express.js
-- TypeScript
+
+* Express.js
+* TypeScript
 
 ## Project Structure
 
-/frontend → React Vite application  
-/backend → Express API server
+/src → React Vite application
+/server → Express API server
 
 ---
 
 ## Requirements
 
-This project assumes that Node.js and npm are installed.
+Install Node.js and npm:
 
-### Quick Installation
-
-#### macOS
-
-Using Homebrew:
+* macOS:
 
 ```bash
 brew install node
 ```
 
-#### Windows
+* Windows:
+  Download from:
+  https://nodejs.org/
 
-Download and install Node.js from:
-
-https://nodejs.org/
-
-#### Verify Installation
+Verify installation:
 
 ```bash
 node -v
 npm -v
 ```
 
-React and Vite dependencies are installed automatically through `npm install`.
-
-Additional references:
-- React: https://react.dev/learn/installation
-- Node.js: https://nodejs.org/
-
 ---
 
 ## Installation
 
-### 1. Clone the repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/jmerinoh/CatBeauty.git
 cd CatBeauty
 ```
 
----
-
-## Frontend Setup
-
-Go to the frontend folder:
-
-```bash
-cd frontend
-```
-
 Install dependencies:
 
 ```bash
 npm install
 ```
 
-Start the frontend server:
+---
+
+## Environment Variables
+
+Create an account at:
+
+https://thecatapi.com/
+
+After signing up, you will receive an API key by email.
+
+Create a `.env` file inside the `/server` folder:
+
+```bash
+cd server
+touch .env
+```
+
+Add your API key:
+
+```env
+CAT_API_KEY=live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Do not commit the `.env` file to GitHub.
+
+---
+
+## Run the Project
+
+Start the frontend:
 
 ```bash
 npm run dev
 ```
 
-Frontend runs on:
+Frontend:
 
 ```txt
 http://localhost:5173
 ```
 
----
-
-## Backend Setup
-
-Open another terminal and go to the backend folder:
-
-```bash
-cd backend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the backend server:
-
-```bash
-npm run dev
-```
-
-Backend runs on:
+Backend:
 
 ```txt
 http://localhost:3001
@@ -127,17 +114,16 @@ http://localhost:3001
 
 ## Features
 
-- Infinite cat gallery
-- Featured cat section
-- Cat details modal
-- Backend API proxy using Express
-- Responsive layout
+* Infinite cat gallery
+* Featured cat section
+* Cat details modal
+* Backend API proxy using Express
+* Responsive layout
 
 ## APIs
 
-- The Cat API  
-https://thecatapi.com/
+* https://thecatapi.com/
 
 ## Notes
 
-This project was developed as part of a frontend/full-stack technical challenge using React, TypeScript, Material UI, Tailwind CSS, and Express.js.
+This project was developed as part of the frontend/full-stack technical challenge for www.CrimsonCircle.com.
