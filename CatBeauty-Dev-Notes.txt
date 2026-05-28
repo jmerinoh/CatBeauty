@@ -59,3 +59,4 @@ https://www.npmjs.com/package/react-infinite-scroll-component
     Mostly, because I had forgotten how to use VS for editing and how to create non class components and because I had forgotten how to pass props, closre and variable scoping.
 2 hours to relearn GitHub, create repo, upload each version to show progress history.
 1 hour to create backend server with express.js and connect with CatAPI
+1 hour to create 4. Deliverables = A README.md with installation and execution instructions.

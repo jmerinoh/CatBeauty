@@ -23,16 +23,19 @@ app.get('/api/breeds', async (_req, res) => {
 })
 
 app.get('/api/cats', async (req, res) => {
-  const { breedId, page = '0', limit = '9' } = req.query
+  const breedId = String(req.query.breedId ?? '')
+  const page = String(req.query.page ?? '0')
+  const limit = String(req.query.limit ?? '9')
 
   const params = new URLSearchParams({
-    limit: String(limit),
-    page: String(page),
+    limit,
+    page,
     has_breeds: '1',
+    order: 'ASC',
   })
 
   if (breedId) {
-    params.append('breed_ids', String(breedId))
+    params.append('breed_ids', breedId)
   }
 
   const response = await fetch(`${CAT_API_BASE_URL}/images/search?${params}`, {
