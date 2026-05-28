@@ -95,6 +95,7 @@ Do not commit the `.env` file to GitHub.
 Start the frontend:
 
 ```bash
+cd CatBeauty
 npm run dev
 ```
 
