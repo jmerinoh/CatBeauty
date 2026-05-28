@@ -60,3 +60,4 @@ https://www.npmjs.com/package/react-infinite-scroll-component
 2 hours to relearn GitHub, create repo, upload each version to show progress history.
 1 hour to create backend server with express.js and connect with CatAPI
 1 hour to create 4. Deliverables = A README.md with installation and execution instructions.
+15 minutes to add infinite scrolling to the page.
